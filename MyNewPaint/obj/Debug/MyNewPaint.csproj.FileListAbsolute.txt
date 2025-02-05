@@ -1,0 +1,12 @@
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.csproj.AssemblyReference.cache
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\MyNewPaint.exe.config
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\MyNewPaint.exe
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\MyNewPaint.pdb
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.DocumentForm.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.Properties.Resources.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.csproj.GenerateResource.cache
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.csproj.CoreCompileInputs.cache
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.exe
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.pdb
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.MainForm.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.CanvasSizeForm.resources
