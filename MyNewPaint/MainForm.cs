@@ -16,8 +16,9 @@ namespace MyNewPaint
         {
             InitializeComponent();
             CurrentColor = Color.Black;
-            //CurrentTool = Tools.Pen;
             toolSelect.SelectedIndex = 0;
+            StarVerticies = 5;
+            StarRadiusRatio = 0.5;
         }
 
 
@@ -27,6 +28,8 @@ namespace MyNewPaint
         public static Color CurrentColor { get; set; } 
         public static Tools CurrentTool { get; set; }
         public static int CurrentPenThickness {  get; set; }
+        public static int StarVerticies { get; set; }
+        public static double StarRadiusRatio { get; set; }
 
 
         #region Выбор цвета
@@ -196,6 +199,13 @@ namespace MyNewPaint
         private void thicknessSelect_ValueChanged(object sender, EventArgs e)
         {
             CurrentPenThickness = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void StarSettings_Click(object sender, EventArgs e)
+        {
+            var f = new StarSettingsForm(this);
+            f.MdiParent = this;
+            f.ShowDialog();
         }
     }
 }

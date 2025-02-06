@@ -10,3 +10,16 @@ C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPai
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.pdb
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.MainForm.resources
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.CanvasSizeForm.resources
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\bin\Debug\MyNewPaint.exe.config
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\bin\Debug\MyNewPaint.exe
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\bin\Debug\MyNewPaint.pdb
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.csproj.AssemblyReference.cache
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.CanvasSizeForm.resources
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.DocumentForm.resources
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.MainForm.resources
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.Properties.Resources.resources
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.csproj.GenerateResource.cache
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.csproj.CoreCompileInputs.cache
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.exe
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.pdb
+C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.StarSettingsForm.resources

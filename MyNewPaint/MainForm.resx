@@ -127,10 +127,10 @@
   <data name="colorSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACUSURBVDhPrZONCoAgDITnz/s/sCjFpK3bWhDpQMzrvnn9
-        SAfUGGPORBQO9EhNtbV2C5e51hpeSwlDvXcFc85mR15HmjRiVluymFIyZl5HGiaZCTxcSjGQ18R7sRaO
-        Ykc6MM94MiPk78Gwu4gJjbgO0m1s4GN+fgQU/ct605VZ/oxbfiRp4KP72Ojh0gRLh0mVn8f5BEPWpxCc
-        D2wmAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACdSURBVDhPrVNbCgQhDKuP+x9YFGfjGo1DfxY30GmbJkUY
+        tS5orY1sZm4A1BCDLaWMBqA45+zWBD1Wa/0Wn2GMcQnZexwyAO9aCTKEcIjRexwyMU6gA0RKadUeR+30
+        nmbv2B4vni0iyaym90xiNypWofZ6ihm7uV5AkYp1qWaJk1STxptfnuvfOO/DMVChxyET/7nKV49pfCd+
+        f869P0PWpxD/on2kAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="blackSelected.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -1,26 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\",
+  "WorkspaceRootPath": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|c:\\users\\anton\\source\\repos\\mdi-paint\\mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|c:\\users\\antoxashowtvgames\\source\\repos\\mynewpaint\\mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\mynewpaint\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\starsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\starsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\starsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\starsettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\canvassizeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\canvassizeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|C:\\Users\\anton\\source\\repos\\MDI-Paint\\mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D970721-EA63-4A2E-A332-C631B1C837D7}|MyNewPaint\\MyNewPaint.csproj|solutionrelative:mynewpaint\\documentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,67 +53,106 @@
               "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\MainForm.cs",
-              "RelativeDocumentMoniker": "MyNewPaint\\MainForm.cs",
-              "ToolTip": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "MyNewPaint\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "StarSettingsForm.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\StarSettingsForm.cs",
+              "RelativeDocumentMoniker": "MyNewPaint\\StarSettingsForm.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\StarSettingsForm.cs",
+              "RelativeToolTip": "MyNewPaint\\StarSettingsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T13:51:10.378Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-02-06T08:12:53.051Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\MainForm.cs",
+              "Title": "StarSettingsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\StarSettingsForm.cs",
+              "RelativeDocumentMoniker": "MyNewPaint\\StarSettingsForm.cs",
+              "ToolTip": "C:\\Users\\anton\\Source\\Repos\\MDI-Paint\\MyNewPaint\\StarSettingsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "MyNewPaint\\StarSettingsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T05:24:29.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CanvasSizeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\CanvasSizeForm.cs",
+              "RelativeDocumentMoniker": "MyNewPaint\\CanvasSizeForm.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\CanvasSizeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "MyNewPaint\\CanvasSizeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T05:24:40.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\MainForm.cs",
               "RelativeDocumentMoniker": "MyNewPaint\\MainForm.cs",
-              "ToolTip": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\MainForm.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\MainForm.cs [Design]",
+              "RelativeToolTip": "MyNewPaint\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T13:51:10.378Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\MainForm.cs",
+              "RelativeDocumentMoniker": "MyNewPaint\\MainForm.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\MainForm.cs",
               "RelativeToolTip": "MyNewPaint\\MainForm.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAuwBIAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAAM8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T07:14:47.937Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "DocumentForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\DocumentForm.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\DocumentForm.cs",
               "RelativeDocumentMoniker": "MyNewPaint\\DocumentForm.cs",
-              "ToolTip": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\DocumentForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\DocumentForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "MyNewPaint\\DocumentForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T14:16:32.538Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-02-04T14:16:32.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "DocumentForm.cs",
-              "DocumentMoniker": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\DocumentForm.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\DocumentForm.cs",
               "RelativeDocumentMoniker": "MyNewPaint\\DocumentForm.cs",
-              "ToolTip": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\DocumentForm.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\DocumentForm.cs",
               "RelativeToolTip": "MyNewPaint\\DocumentForm.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAA5wFIAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwFIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T14:16:36.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T14:16:36.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Tools.cs",
-              "DocumentMoniker": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\Tools.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\Tools.cs",
               "RelativeDocumentMoniker": "MyNewPaint\\Tools.cs",
-              "ToolTip": "C:\\Users\\antoxashowtvgames\\source\\repos\\MyNewPaint\\MyNewPaint\\Tools.cs",
+              "ToolTip": "C:\\Users\\anton\\source\\repos\\MDI-Paint\\MyNewPaint\\Tools.cs",
               "RelativeToolTip": "MyNewPaint\\Tools.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwCYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T14:15:27.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T14:15:27.717Z"
             }
           ]
         },
