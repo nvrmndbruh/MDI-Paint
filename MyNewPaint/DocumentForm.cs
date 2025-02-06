@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.CodeDom;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace MyNewPaint
 {
@@ -16,24 +9,26 @@ namespace MyNewPaint
     {
         private int x, y;
 
-        private Bitmap bmp;
+        public Bitmap Bmp;
 
-        private Bitmap bmpTemp;
+        private Bitmap BmpTemp;
 
         private Graphics graphics;
 
         public DocumentForm()
         {
             InitializeComponent();
-            bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-            graphics = Graphics.FromImage(bmp);
-            bmpTemp = bmp;
+            Bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
+            graphics = Graphics.FromImage(Bmp);
+            BmpTemp = Bmp;
         }
 
         public DocumentForm(Bitmap bmp)
         {
             InitializeComponent();
-            this.bmp = bmp;
+            Bmp = bmp;
+            graphics = Graphics.FromImage(Bmp);
+            BmpTemp = Bmp;
         }
 
         private void DocumentForm_MouseMove(object sender, MouseEventArgs e)
@@ -47,46 +42,35 @@ namespace MyNewPaint
                 switch (MainForm.CurrentTool)
                 {
                     case Tools.Pen:
-                        //graphics = Graphics.FromImage(bmp);
                         graphics.DrawLine(pen, x, y, e.X, e.Y);
                         x = e.X;
                         y = e.Y;
-                        bmpTemp = bmp;
-                        Cursor = Cursors.Default;
-
+                        BmpTemp = Bmp;
                         Invalidate();
                         break;
-                    case Tools.Circle:
-                        bmpTemp = (Bitmap)bmp.Clone();
-                        graphics = Graphics.FromImage(bmpTemp);
+                    case Tools.Ellipse:
+                        BmpTemp = (Bitmap)Bmp.Clone();
+                        graphics = Graphics.FromImage(BmpTemp);
                         graphics.DrawEllipse(pen, new Rectangle(x, y, e.X - x, e.Y-y));
-                        Cursor = Cursors.Cross;
-
                         Invalidate();
                         break;
                     case Tools.Rectangle:
-                        bmpTemp = (Bitmap)bmp.Clone();
-                        graphics = Graphics.FromImage(bmpTemp);
+                        BmpTemp = (Bitmap)Bmp.Clone();
+                        graphics = Graphics.FromImage(BmpTemp);
                         graphics.DrawRectangle(pen, x, y, e.X - x, e.Y - y);
-
                         Invalidate();
                         break;
                     case Tools.Star:
-                        bmpTemp = (Bitmap)bmp.Clone();
-                        graphics = Graphics.FromImage(bmpTemp);
-
-                        int n = MainForm.StarVerticies;                 // число вершин
+                        BmpTemp = (Bitmap)Bmp.Clone();
+                        graphics = Graphics.FromImage(BmpTemp);
+                        int n = MainForm.StarPointCount;                 // число вершин
                         double radiusRatio = MainForm.StarRadiusRatio;  // радиусы
-
                         double rx = (e.X-x) / 2;
                         double ry = (e.Y - y) / 2;
                         double cx = x + rx;
                         double cy = y + ry;
-
                         double ratio = rx == 0 ? 1 : ry/rx;
-
                         PointF[] points = new PointF[2 * n + 1];
-
                         double a = Math.PI/2, da = Math.PI/n, l;
                         for (int k = 0; k < 2 * n + 1; k++)
                         {
@@ -96,10 +80,24 @@ namespace MyNewPaint
                                 (float)(cy + l * Math.Sin(a)*ratio));
                             a += da;
                         }
-
                         graphics.DrawLines(pen, points);
-                        
                         Invalidate();
+                        break;
+                    case Tools.Line:
+                        BmpTemp = (Bitmap)Bmp.Clone();
+                        graphics = Graphics.FromImage(BmpTemp);
+                        graphics.DrawLine(pen, x, y, e.X, e.Y);
+                        Invalidate();
+                        break;
+                    case Tools.Eraser:
+                        pen.Color = Color.Transparent;
+                        graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                        graphics.DrawLine(pen, x, y, e.X, e.Y);
+                        x = e.X;
+                        y = e.Y;
+                        Invalidate();
+                        break;
+                    case Tools.Fill:
                         break;
                 }
                
@@ -119,23 +117,17 @@ namespace MyNewPaint
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.DrawImage(bmpTemp, 0, 0);
+            e.Graphics.DrawImage(BmpTemp, 0, 0);
         }
 
         private void DocumentForm_MouseUp(object sender, MouseEventArgs e)
         {
             switch (MainForm.CurrentTool)
             {
-                case Tools.Circle:
-                    bmp = bmpTemp;
-                    Invalidate();
+                case Tools.Pen:
                     break;
-                case Tools.Rectangle:
-                    bmp = bmpTemp;
-                    Invalidate();
-                    break;
-                case Tools.Star:
-                    bmp = bmpTemp;
+                default:
+                    Bmp = BmpTemp;
                     Invalidate();
                     break;
             }
@@ -145,12 +137,30 @@ namespace MyNewPaint
         {
             var parent = MdiParent as MainForm;
             parent?.ShowPosition(-1, -1);
-            Cursor = Cursors.Default;
+            Cursor = Cursors.Arrow;
         }
 
-        public void SaveAs(string path)
+
+        public void SaveButton_Click(object sender, EventArgs e)
         {
-            bmp.Save(path);
+            //bmp.Save();
+        }
+
+        private void DocumentForm_MouseEnter(object sender, EventArgs e)
+        {
+            MainForm.CurrentCursor = Cursors.Arrow;
+        }
+
+        public void SaveAsButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new SaveFileDialog();
+            dialog.Filter = "*.bmp|*.bmp|*.jpg|*.jpg|*.png|*.png|All files|*.*";
+            dialog.FileName = $"{((DocumentForm)ActiveMdiChild).Text}";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ((DocumentForm)ActiveMdiChild).Bmp.Save(dialog.FileName);
+                ActiveMdiChild.Text = dialog.FileName;
+            }
         }
     }
 }

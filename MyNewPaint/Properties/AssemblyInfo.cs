@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Мой Paint")]
-[assembly: AssemblyDescription("Очень хороший")]
+[assembly: AssemblyTitle("MDI Painter application")]
+[assembly: AssemblyDescription("Supa Dupa Cool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyNewPaint")]
-[assembly: AssemblyCopyright("Ланин В.В. ©  2021")]
+[assembly: AssemblyProduct("MDI Paint")]
+[assembly: AssemblyCopyright("Князев А.Л. ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

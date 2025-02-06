@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyNewPaint
+﻿namespace MyNewPaint
 {
     /// <summary>
     /// Инструменты рисования.
@@ -19,7 +12,7 @@ namespace MyNewPaint
         /// <summary>
         /// Овал
         /// </summary>
-        Circle,
+        Ellipse,
         /// <summary>
         /// Прямоугольник
         /// </summary>
@@ -35,7 +28,15 @@ namespace MyNewPaint
         /// <summary>
         /// Заливка
         /// </summary>
-        Fill
+        Fill,
+        /// <summary>
+        /// Ластик
+        /// </summary>
+        Eraser,
+        /// <summary>
+        /// Текст
+        /// </summary>
+        Text
     }
 
 }

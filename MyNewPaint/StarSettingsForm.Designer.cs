@@ -40,10 +40,9 @@
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(145, 122);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Location = new System.Drawing.Point(109, 99);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 28);
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -52,10 +51,9 @@
             // buttonOK
             // 
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOK.Location = new System.Drawing.Point(37, 122);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonOK.Location = new System.Drawing.Point(28, 99);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(100, 28);
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 10;
             this.buttonOK.Text = "ОК";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -64,20 +62,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 71);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Отношение радиусов";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(64, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Число лучей";
             // 
@@ -85,8 +81,7 @@
             // 
             this.verticiesSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.verticiesSelect.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.verticiesSelect.Location = new System.Drawing.Point(186, 25);
-            this.verticiesSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.verticiesSelect.Location = new System.Drawing.Point(140, 20);
             this.verticiesSelect.Maximum = new decimal(new int[] {
             15,
             0,
@@ -98,29 +93,32 @@
             0,
             0});
             this.verticiesSelect.Name = "verticiesSelect";
-            this.verticiesSelect.Size = new System.Drawing.Size(59, 22);
+            this.verticiesSelect.Size = new System.Drawing.Size(44, 20);
             this.verticiesSelect.TabIndex = 13;
             this.verticiesSelect.Value = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.verticiesSelect.ValueChanged += new System.EventHandler(this.verticiesSelect_ValueChanged);
+            this.verticiesSelect.ValueChanged += new System.EventHandler(this.PointCountSelect);
             // 
             // radiusRatioSelect
             // 
-            this.radiusRatioSelect.Location = new System.Drawing.Point(186, 71);
+            this.radiusRatioSelect.Location = new System.Drawing.Point(140, 58);
+            this.radiusRatioSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radiusRatioSelect.Mask = "0.00";
             this.radiusRatioSelect.Name = "radiusRatioSelect";
-            this.radiusRatioSelect.Size = new System.Drawing.Size(37, 22);
+            this.radiusRatioSelect.Size = new System.Drawing.Size(29, 20);
             this.radiusRatioSelect.TabIndex = 14;
-            this.radiusRatioSelect.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.radiusRatioSelect_MaskInputRejected);
+            this.radiusRatioSelect.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.RadiusRatioSelect_MaskInputRejected);
             // 
             // StarSettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.buttonOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 175);
+            this.CancelButton = this.buttonCancel;
+            this.ClientSize = new System.Drawing.Size(221, 142);
             this.Controls.Add(this.radiusRatioSelect);
             this.Controls.Add(this.verticiesSelect);
             this.Controls.Add(this.buttonCancel);
@@ -128,11 +126,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StarSettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "Настройки звезды";
             ((System.ComponentModel.ISupportInitialize)(this.verticiesSelect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

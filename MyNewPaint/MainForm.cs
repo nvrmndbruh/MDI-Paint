@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MyNewPaint
@@ -17,19 +12,16 @@ namespace MyNewPaint
             InitializeComponent();
             CurrentColor = Color.Black;
             toolSelect.SelectedIndex = 0;
-            StarVerticies = 5;
+            StarPointCount = 5;
             StarRadiusRatio = 0.5;
         }
 
-
-        /// <summary>
-        /// Текущий цвет.
-        /// </summary>
         public static Color CurrentColor { get; set; } 
         public static Tools CurrentTool { get; set; }
         public static int CurrentPenThickness {  get; set; }
-        public static int StarVerticies { get; set; }
+        public static int StarPointCount { get; set; }
         public static double StarRadiusRatio { get; set; }
+        public static Cursor CurrentCursor { get; set; }
 
 
         #region Выбор цвета
@@ -66,25 +58,83 @@ namespace MyNewPaint
         }
         #endregion
 
-        #region Выбор пера
-        private void UsePenTool_Click(object sender, EventArgs e)
+        #region Настройки пера
+
+        private void UsePenTool()
         {
             CurrentTool = Tools.Pen;
+            CurrentCursor = Cursors.Hand;
         }
 
-        private void UseCircleTool_Click(object sender, EventArgs e)
+        private void UseCircleTool()
         {
-            CurrentTool = Tools.Circle;
+            CurrentTool = Tools.Ellipse;
         }
 
-        private void UseRectangleTool_Click(object sender, EventArgs e)
+        private void UseRectangleTool()
         {
             CurrentTool = Tools.Rectangle;
         }
 
-        private void UseStarTool_Click(object sender, EventArgs e)
+        private void UseStarTool()
         {
             CurrentTool = Tools.Star;
+        }
+
+        private void UseLineTool()
+        {
+            CurrentTool = Tools.Line;
+        }
+
+        private void UseEraserTool()
+        {
+            CurrentTool = Tools.Eraser;
+        }
+
+
+        private void toolStripSplitButton2_Click(object sender, EventArgs e)
+        {
+            var cmb = (ToolStripComboBox)sender;
+            switch (cmb.Text)
+            {
+                case "Перо": { UsePenTool(); break; }
+                case "Эллипс": { UseCircleTool(); break; }
+                case "Прямоугольник": { UseRectangleTool(); break; }
+                case "Звезда": { UseStarTool(); break; }
+                case "Линия": { UseLineTool(); break; }
+                case "Ластик": { UseEraserTool(); break; }
+            }
+        }
+
+        private void thicknessSelect_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentPenThickness = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void StarSettings_Click(object sender, EventArgs e)
+        {
+            var settingsForm = new StarSettingsForm(this);
+            settingsForm.ShowDialog();
+        }
+
+
+        #endregion
+
+        #region Расположение окон
+
+        private void CascadeLayout_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void TileVerticalLayout_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void ArrangeIconsLayout_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
         #endregion
@@ -97,9 +147,7 @@ namespace MyNewPaint
         private void NewDocument_Click(object sender, EventArgs e)
         {
             var f = new DocumentForm();
-
             f.MdiParent = this;
-
             f.Show();
         }
 
@@ -116,43 +164,23 @@ namespace MyNewPaint
             f.ShowDialog();
         }
 
-        private void каскадомToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-        
-
         private void FileSaveAs_Click(object sender, EventArgs e)
         {
-            var d = ActiveMdiChild as DocumentForm;
-
-            if (d != null)
+            var dialog = new SaveFileDialog();
+            dialog.Filter = "*.bmp|*.bmp|*.jpg|*.jpg|*.png|*.png|All files|*.*";
+            dialog.FileName = $"{((DocumentForm)ActiveMdiChild).Text}";
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var dlg = new SaveFileDialog();
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    d.SaveAs(dlg.FileName);
-                }
-
+                ((DocumentForm)ActiveMdiChild).Bmp.Save(dialog.FileName);
+                ActiveMdiChild.Text = dialog.FileName;
             }
         }
-
-        private void слеваНаправоToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void упорядочитьЗначкиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
 
         private void файлToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
             var d = ActiveMdiChild as DocumentForm;
+            SaveAsButton.Enabled = d != null;
 
-            сохранитьКакToolStripMenuItem.Enabled = d != null;
         }
 
         public void ShowPosition(int x, int y) 
@@ -163,49 +191,18 @@ namespace MyNewPaint
                 statusLabelPosition.Text = string.Empty;
         }
 
-        private void toolStripSplitButton2_Click(object sender, EventArgs e)
+        private void FileOpen_Click(object sender, EventArgs e)
         {
-            var cmb = (ToolStripComboBox)sender;
-            switch (cmb.Text)
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "All files|*.*|*.bmp|*.bmp|*.jpg|*.jpg|*.png|*.png";
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
-                case "Перо":
-                    {
-                        CurrentTool = Tools.Pen;
-                        break;
-                    }
-                case "Овал":
-                    {
-                        CurrentTool = Tools.Circle;
-                        break;
-                    }
-                case "Прямоугольник":
-                    {
-                        CurrentTool = Tools.Rectangle;
-                        break;
-                    }
-                case "Звезда":
-                    {
-                        CurrentTool = Tools.Star;
-                        break;
-                    }
-                //case "Перо":
-                //    {
-                //        CurrentTool = Tools.Pen;
-                //        break;
-                //    }
+                Stream s = new FileStream(dlg.FileName, FileMode.Open, FileAccess.Read);
+                var tmp = new Bitmap(s);
+                DocumentForm doc = new DocumentForm(tmp);
+                doc.MdiParent = this;
+                doc.Show();
             }
-        }
-
-        private void thicknessSelect_ValueChanged(object sender, EventArgs e)
-        {
-            CurrentPenThickness = (int)((NumericUpDown)sender).Value;
-        }
-
-        private void StarSettings_Click(object sender, EventArgs e)
-        {
-            var f = new StarSettingsForm(this);
-            f.MdiParent = this;
-            f.ShowDialog();
         }
     }
 }

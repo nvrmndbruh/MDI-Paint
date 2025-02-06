@@ -12,13 +12,13 @@ namespace MyNewPaint
 {
     public partial class StarSettingsForm : Form
     {
-        public static MainForm MainForm { get; set; }
+        //public static MainForm MainForm { get; set; }
 
         public StarSettingsForm(MainForm parent)
         {
             InitializeComponent();
-            MainForm = parent;
-            verticiesSelect.Value = MainForm.StarVerticies;
+            //MainForm = parent;
+            verticiesSelect.Value = MainForm.StarPointCount;
             radiusRatioSelect.Text = (MainForm.StarRadiusRatio).ToString("f2");
         }
 
@@ -29,16 +29,16 @@ namespace MyNewPaint
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            MainForm.StarVerticies = (int)verticiesSelect.Value;
+            MainForm.StarPointCount = (int)verticiesSelect.Value;
             MainForm.StarRadiusRatio = double.Parse(radiusRatioSelect.Text);
         }
 
-        private void verticiesSelect_ValueChanged(object sender, EventArgs e)
+        private void PointCountSelect(object sender, EventArgs e)
         {
-            MainForm.StarVerticies = (int)((NumericUpDown)sender).Value;
+            MainForm.StarPointCount = (int)((NumericUpDown)sender).Value;
         }
 
-        private void radiusRatioSelect_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void RadiusRatioSelect_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             MessageBox.Show("Неправильный формат ввода!\nВводимое значение должно иметь вид '*.**'");   
         }

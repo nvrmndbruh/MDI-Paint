@@ -23,3 +23,5 @@ C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.csproj.Cor
 C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.exe
 C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.pdb
 C:\Users\anton\Source\Repos\MDI-Paint\MyNewPaint\obj\Debug\MyNewPaint.StarSettingsForm.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.StarSettingsForm.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.AboutBoxForm.resources
