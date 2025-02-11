@@ -12,9 +12,7 @@ namespace MyNewPaint
 {
     public partial class StarSettingsForm : Form
     {
-        //public static MainForm MainForm { get; set; }
-
-        public StarSettingsForm(MainForm parent)
+        public StarSettingsForm()
         {
             InitializeComponent();
             //MainForm = parent;
@@ -40,7 +38,7 @@ namespace MyNewPaint
 
         private void RadiusRatioSelect_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            MessageBox.Show("Неправильный формат ввода!\nВводимое значение должно иметь вид '*.**'");   
+            MessageBox.Show("Вводимое значение должно иметь вид '*.**'", "Неправильный формат ввода!", MessageBoxButtons.OK, MessageBoxIcon.Error);   
         }
     }
 }

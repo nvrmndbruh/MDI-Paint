@@ -65,6 +65,17 @@
     <Compile Include="CanvasSizeForm.Designer.cs">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInputDialog.Designer.cs">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StarSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +100,9 @@
     <EmbeddedResource Include="DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextInputDialog.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StarSettingsForm.resx">
       <DependentUpon>StarSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,14 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,7 +128,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Recources\" />
+    <None Include="Resources\about_app.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fill.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_fill.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\other_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_default.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

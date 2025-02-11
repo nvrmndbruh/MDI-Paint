@@ -95,10 +95,11 @@
             this.widthSelect.Size = new System.Drawing.Size(81, 20);
             this.widthSelect.TabIndex = 7;
             this.widthSelect.Value = new decimal(new int[] {
-            1,
+            500,
             0,
             0,
             0});
+            this.widthSelect.ValueChanged += new System.EventHandler(this.widthSelect_ValueChanged);
             // 
             // heightSelect
             // 
@@ -119,10 +120,11 @@
             this.heightSelect.Size = new System.Drawing.Size(81, 20);
             this.heightSelect.TabIndex = 8;
             this.heightSelect.Value = new decimal(new int[] {
-            1,
+            500,
             0,
             0,
             0});
+            this.heightSelect.ValueChanged += new System.EventHandler(this.heightSelect_ValueChanged);
             // 
             // CanvasSizeForm
             // 
