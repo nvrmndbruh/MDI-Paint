@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNewPaint", "MyNewPaint\MyNewPaint.csproj", "{4D970721-EA63-4A2E-A332-C631B1C837D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginInterface\PluginInterface.csproj", "{F2E41E77-BCDD-412B-BEDE-E773CD43D25B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMedianFilter", "MatrixMedianFilter\MatrixMedianFilter.csproj", "{0173AAE2-15C6-4D78-BEBF-4A5EDF778FDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationAndTime", "LocationAndTime\LocationAndTime.csproj", "{1424FB01-81D0-4EBF-B8FF-BD31823FF4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonochromeFilter", "MonochromeFilter\MonochromeFilter.csproj", "{236671C6-AFAD-4942-A12F-BE622F9F820F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +23,27 @@ Global
 		{4D970721-EA63-4A2E-A332-C631B1C837D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D970721-EA63-4A2E-A332-C631B1C837D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D970721-EA63-4A2E-A332-C631B1C837D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E41E77-BCDD-412B-BEDE-E773CD43D25B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E41E77-BCDD-412B-BEDE-E773CD43D25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E41E77-BCDD-412B-BEDE-E773CD43D25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E41E77-BCDD-412B-BEDE-E773CD43D25B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0173AAE2-15C6-4D78-BEBF-4A5EDF778FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0173AAE2-15C6-4D78-BEBF-4A5EDF778FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0173AAE2-15C6-4D78-BEBF-4A5EDF778FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0173AAE2-15C6-4D78-BEBF-4A5EDF778FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1424FB01-81D0-4EBF-B8FF-BD31823FF4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1424FB01-81D0-4EBF-B8FF-BD31823FF4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1424FB01-81D0-4EBF-B8FF-BD31823FF4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1424FB01-81D0-4EBF-B8FF-BD31823FF4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236671C6-AFAD-4942-A12F-BE622F9F820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236671C6-AFAD-4942-A12F-BE622F9F820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236671C6-AFAD-4942-A12F-BE622F9F820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236671C6-AFAD-4942-A12F-BE622F9F820F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9659C82-5BDD-423C-94A6-EFD23B596C05}
 	EndGlobalSection
 EndGlobal

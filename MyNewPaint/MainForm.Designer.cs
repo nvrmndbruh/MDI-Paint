@@ -48,15 +48,8 @@
             this.arrangeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolSelect = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
-            this.thicknessSelect = new System.Windows.Forms.NumericUpDown();
             this.colorSelect = new System.Windows.Forms.ToolStripDropDownButton();
             this.blackSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.redSelected = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,9 +58,16 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.otherSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.fillButton = new System.Windows.Forms.ToolStripButton();
-            this.zoomDefaultButton = new System.Windows.Forms.ToolStripButton();
-            this.zoomOutButton = new System.Windows.Forms.ToolStripButton();
-            this.zoomInButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolSelect = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
+            this.thicknessSelect = new System.Windows.Forms.NumericUpDown();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -81,7 +81,8 @@
             this.файлToolStripMenuItem,
             this.рисунокToolStripMenuItem,
             this.окноToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.справкаToolStripMenuItem,
+            this.filtersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.окноToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
@@ -109,7 +110,7 @@
             // 
             this.newDocumentButton.Name = "newDocumentButton";
             this.newDocumentButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newDocumentButton.Size = new System.Drawing.Size(253, 22);
+            this.newDocumentButton.Size = new System.Drawing.Size(237, 22);
             this.newDocumentButton.Text = "&Новый";
             this.newDocumentButton.Click += new System.EventHandler(this.NewDocument_Click);
             // 
@@ -117,20 +118,20 @@
             // 
             this.openButton.Name = "openButton";
             this.openButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openButton.Size = new System.Drawing.Size(253, 22);
+            this.openButton.Size = new System.Drawing.Size(237, 22);
             this.openButton.Text = "Открыть";
             this.openButton.Click += new System.EventHandler(this.FileOpen_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(250, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(234, 6);
             // 
             // saveButton
             // 
             this.saveButton.Name = "saveButton";
             this.saveButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveButton.Size = new System.Drawing.Size(253, 22);
+            this.saveButton.Size = new System.Drawing.Size(237, 22);
             this.saveButton.Text = "Сохранить";
             this.saveButton.Click += new System.EventHandler(this.FileSave_Click);
             // 
@@ -139,20 +140,20 @@
             this.saveAsButton.Name = "saveAsButton";
             this.saveAsButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.saveAsButton.Size = new System.Drawing.Size(253, 22);
+            this.saveAsButton.Size = new System.Drawing.Size(237, 22);
             this.saveAsButton.Text = "Сохранить как ...";
             this.saveAsButton.Click += new System.EventHandler(this.FileSaveAs_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(250, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(234, 6);
             // 
             // exitButton
             // 
             this.exitButton.Name = "exitButton";
             this.exitButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitButton.Size = new System.Drawing.Size(253, 22);
+            this.exitButton.Size = new System.Drawing.Size(237, 22);
             this.exitButton.Text = "&Выход";
             this.exitButton.Click += new System.EventHandler(this.ExitApplication_Click);
             // 
@@ -172,19 +173,19 @@
             this.canvasSizeButton.Name = "canvasSizeButton";
             this.canvasSizeButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.C)));
-            this.canvasSizeButton.Size = new System.Drawing.Size(232, 22);
+            this.canvasSizeButton.Size = new System.Drawing.Size(218, 22);
             this.canvasSizeButton.Text = "Размер холста";
             this.canvasSizeButton.Click += new System.EventHandler(this.CanvasSize_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(215, 6);
             // 
             // starsettingsButton
             // 
             this.starsettingsButton.Name = "starsettingsButton";
-            this.starsettingsButton.Size = new System.Drawing.Size(232, 22);
+            this.starsettingsButton.Size = new System.Drawing.Size(218, 22);
             this.starsettingsButton.Text = "Параметры звезды";
             this.starsettingsButton.Click += new System.EventHandler(this.StarSettings_Click);
             // 
@@ -235,6 +236,12 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе ...";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.AboutApplication_Click);
             // 
+            // filtersToolStripMenuItem
+            // 
+            this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
+            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.filtersToolStripMenuItem.Text = "Фильтры";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -246,16 +253,84 @@
             this.toolSelect,
             this.toolStripLabel1,
             this.toolStripLabel5,
-            this.toolStripSeparator1,
-            this.zoomInButton,
-            this.zoomOutButton,
-            this.zoomDefaultButton});
+            this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(729, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // colorSelect
+            // 
+            this.colorSelect.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.blackSelected,
+            this.redSelected,
+            this.greenSelected,
+            this.blueSelected,
+            this.toolStripSeparator3,
+            this.otherSelected});
+            this.colorSelect.Image = ((System.Drawing.Image)(resources.GetObject("colorSelect.Image")));
+            this.colorSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.colorSelect.Name = "colorSelect";
+            this.colorSelect.Size = new System.Drawing.Size(66, 24);
+            this.colorSelect.Text = "Цвет";
+            // 
+            // blackSelected
+            // 
+            this.blackSelected.Image = global::MyNewPaint.Properties.Resources.black_color;
+            this.blackSelected.Name = "blackSelected";
+            this.blackSelected.Size = new System.Drawing.Size(123, 22);
+            this.blackSelected.Text = "Черный";
+            this.blackSelected.Click += new System.EventHandler(this.SetColorBlack_Click);
+            // 
+            // redSelected
+            // 
+            this.redSelected.Image = global::MyNewPaint.Properties.Resources.red_color;
+            this.redSelected.Name = "redSelected";
+            this.redSelected.Size = new System.Drawing.Size(123, 22);
+            this.redSelected.Text = "Красный";
+            this.redSelected.Click += new System.EventHandler(this.SetColorRed_Click);
+            // 
+            // greenSelected
+            // 
+            this.greenSelected.Image = global::MyNewPaint.Properties.Resources.green_color;
+            this.greenSelected.Name = "greenSelected";
+            this.greenSelected.Size = new System.Drawing.Size(123, 22);
+            this.greenSelected.Text = "Зеленый";
+            this.greenSelected.Click += new System.EventHandler(this.SetColorGreen_Click);
+            // 
+            // blueSelected
+            // 
+            this.blueSelected.Image = global::MyNewPaint.Properties.Resources.blue_color;
+            this.blueSelected.Name = "blueSelected";
+            this.blueSelected.Size = new System.Drawing.Size(123, 22);
+            this.blueSelected.Text = "Синий";
+            this.blueSelected.Click += new System.EventHandler(this.SetColorBlue_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(120, 6);
+            // 
+            // otherSelected
+            // 
+            this.otherSelected.Image = global::MyNewPaint.Properties.Resources.other_color;
+            this.otherSelected.Name = "otherSelected";
+            this.otherSelected.Size = new System.Drawing.Size(123, 22);
+            this.otherSelected.Text = "Другой";
+            this.otherSelected.Click += new System.EventHandler(this.SetColorOther_Click);
+            // 
+            // fillButton
+            // 
+            this.fillButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.fillButton.Image = ((System.Drawing.Image)(resources.GetObject("fillButton.Image")));
+            this.fillButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fillButton.Name = "fillButton";
+            this.fillButton.Size = new System.Drawing.Size(24, 24);
+            this.fillButton.Text = "toolStripButton1";
+            this.fillButton.ToolTipText = "Заливка";
+            this.fillButton.Click += new System.EventHandler(this.FillButton_Click);
             // 
             // toolStripLabel2
             // 
@@ -337,106 +412,25 @@
             0});
             this.thicknessSelect.ValueChanged += new System.EventHandler(this.thicknessSelect_ValueChanged);
             // 
-            // colorSelect
+            // progressBar1
             // 
-            this.colorSelect.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blackSelected,
-            this.redSelected,
-            this.greenSelected,
-            this.blueSelected,
-            this.toolStripSeparator3,
-            this.otherSelected});
-            this.colorSelect.Image = ((System.Drawing.Image)(resources.GetObject("colorSelect.Image")));
-            this.colorSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.colorSelect.Name = "colorSelect";
-            this.colorSelect.Size = new System.Drawing.Size(66, 24);
-            this.colorSelect.Text = "Цвет";
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(570, 491);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(147, 19);
+            this.progressBar1.TabIndex = 8;
             // 
-            // blackSelected
+            // btnCancel
             // 
-            this.blackSelected.Image = global::MyNewPaint.Properties.Resources.black_color;
-            this.blackSelected.Name = "blackSelected";
-            this.blackSelected.Size = new System.Drawing.Size(127, 26);
-            this.blackSelected.Text = "Черный";
-            this.blackSelected.Click += new System.EventHandler(this.SetColorBlack_Click);
-            // 
-            // redSelected
-            // 
-            this.redSelected.Image = global::MyNewPaint.Properties.Resources.red_color;
-            this.redSelected.Name = "redSelected";
-            this.redSelected.Size = new System.Drawing.Size(127, 26);
-            this.redSelected.Text = "Красный";
-            this.redSelected.Click += new System.EventHandler(this.SetColorRed_Click);
-            // 
-            // greenSelected
-            // 
-            this.greenSelected.Image = global::MyNewPaint.Properties.Resources.green_color;
-            this.greenSelected.Name = "greenSelected";
-            this.greenSelected.Size = new System.Drawing.Size(127, 26);
-            this.greenSelected.Text = "Зеленый";
-            this.greenSelected.Click += new System.EventHandler(this.SetColorGreen_Click);
-            // 
-            // blueSelected
-            // 
-            this.blueSelected.Image = global::MyNewPaint.Properties.Resources.blue_color;
-            this.blueSelected.Name = "blueSelected";
-            this.blueSelected.Size = new System.Drawing.Size(127, 26);
-            this.blueSelected.Text = "Синий";
-            this.blueSelected.Click += new System.EventHandler(this.SetColorBlue_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(124, 6);
-            // 
-            // otherSelected
-            // 
-            this.otherSelected.Image = global::MyNewPaint.Properties.Resources.other_color;
-            this.otherSelected.Name = "otherSelected";
-            this.otherSelected.Size = new System.Drawing.Size(127, 26);
-            this.otherSelected.Text = "Другой";
-            this.otherSelected.Click += new System.EventHandler(this.SetColorOther_Click);
-            // 
-            // fillButton
-            // 
-            this.fillButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.fillButton.Image = ((System.Drawing.Image)(resources.GetObject("fillButton.Image")));
-            this.fillButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.fillButton.Name = "fillButton";
-            this.fillButton.Size = new System.Drawing.Size(24, 24);
-            this.fillButton.Text = "toolStripButton1";
-            this.fillButton.ToolTipText = "Заливка";
-            this.fillButton.Click += new System.EventHandler(this.FillButton_Click);
-            // 
-            // zoomDefaultButton
-            // 
-            this.zoomDefaultButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.zoomDefaultButton.Image = global::MyNewPaint.Properties.Resources.zoom_default;
-            this.zoomDefaultButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.zoomDefaultButton.Name = "zoomDefaultButton";
-            this.zoomDefaultButton.Size = new System.Drawing.Size(24, 24);
-            this.zoomDefaultButton.Text = "toolStripButton3";
-            this.zoomDefaultButton.Click += new System.EventHandler(this.zoomDefaultButton_Click);
-            // 
-            // zoomOutButton
-            // 
-            this.zoomOutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.zoomOutButton.Image = global::MyNewPaint.Properties.Resources.zoom_in;
-            this.zoomOutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.zoomOutButton.Name = "zoomOutButton";
-            this.zoomOutButton.Size = new System.Drawing.Size(24, 24);
-            this.zoomOutButton.Text = "toolStripButton2";
-            this.zoomOutButton.Click += new System.EventHandler(this.zoomOutButton_Click);
-            // 
-            // zoomInButton
-            // 
-            this.zoomInButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.zoomInButton.Image = global::MyNewPaint.Properties.Resources.zoom_out;
-            this.zoomInButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.zoomInButton.Name = "zoomInButton";
-            this.zoomInButton.Size = new System.Drawing.Size(24, 24);
-            this.zoomInButton.Text = "toolStripButton1";
-            this.zoomInButton.Click += new System.EventHandler(this.zoomInButton_Click);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(489, 491);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 19);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // MainForm
             // 
@@ -444,6 +438,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(729, 513);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.thicknessSelect);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -503,9 +499,9 @@
         private System.Windows.Forms.ToolStripMenuItem openButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton fillButton;
-        private System.Windows.Forms.ToolStripButton zoomInButton;
-        private System.Windows.Forms.ToolStripButton zoomOutButton;
-        private System.Windows.Forms.ToolStripButton zoomDefaultButton;
+        private System.Windows.Forms.ToolStripMenuItem filtersToolStripMenuItem;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

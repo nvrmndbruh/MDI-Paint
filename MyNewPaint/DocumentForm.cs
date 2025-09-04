@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MyNewPaint
@@ -14,7 +17,7 @@ namespace MyNewPaint
     {
         private int x, y;
         public Bitmap Bmp { get; set; }
-        private Bitmap BmpTemp {get; set; }
+        public Bitmap BmpTemp {get; set; }
         public string FilePath {  get; set; }
         public bool Saved { get; set; } = true;
 
@@ -373,5 +376,4 @@ namespace MyNewPaint
             Invalidate(); // Перерисовываем холст
         }
     }
-
 }

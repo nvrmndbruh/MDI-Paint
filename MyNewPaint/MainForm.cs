@@ -1,7 +1,14 @@
-﻿using System;
+﻿using PluginInterface;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyNewPaint
 {
@@ -49,6 +56,13 @@ namespace MyNewPaint
         public static double StarRadiusRatio { get; set; }
         public static bool FillFigures { get; set; } = false;
 
+
+        Dictionary<string, IPlugin> plugins = new Dictionary<string, IPlugin>();
+
+        private PluginsConfiguration config;
+
+        private CancellationTokenSource _cts;
+
         public MainForm()
         {
             InitializeComponent();
@@ -57,6 +71,9 @@ namespace MyNewPaint
             toolSelect.SelectedIndex = 0;
             StarPointCount = 5;
             StarRadiusRatio = 0.5;
+
+            FindPlugins();
+            CreatePluginsMenu();
         }
 
         #region Выбор цвета
@@ -312,18 +329,206 @@ namespace MyNewPaint
             doc.Invalidate();
         }
 
-        private void zoomOutButton_Click(object sender, EventArgs e)
+
+        void FindPlugins()
         {
-            var doc = ActiveMdiChild as DocumentForm;
-            doc?.ZoomOut();
-            doc.Invalidate();
+            // папка с плагинами
+            plugins.Clear();
+            config = LoadConfig();
+
+            string folder = AppDomain.CurrentDomain.BaseDirectory;
+            var files = Directory.GetFiles(folder, "*.dll");
+            var loadedPlugins = new List<PluginConfigEntry>();
+
+            foreach (string file in files)
+            {
+                try
+                {
+                    Assembly asm = Assembly.LoadFile(file);
+
+                    foreach (Type type in asm.GetTypes())
+                    {
+                        if (type.GetInterface(typeof(IPlugin).FullName) != null)
+                        {
+                            // получаем версию из VersionAttribute
+                            var versionAttr = type.GetCustomAttributes(typeof(VersionAttribute), false)
+                                         .FirstOrDefault() as VersionAttribute;
+
+                            string version = versionAttr != null
+                                ? $"{versionAttr.Major}.{versionAttr.Minor}"
+                                : "Unknown";
+
+                            var pluginName = Path.GetFileName(file);
+
+                            // если автоматический режим или в конфиге включён
+                            bool shouldLoad = config.AutoMode ||
+                                config.Plugins.FirstOrDefault(p => p.Path == pluginName)?.Enabled == true;
+
+                            if (shouldLoad)
+                            {
+                                IPlugin plugin = (IPlugin)Activator.CreateInstance(type);
+                                plugins[plugin.Name] = plugin;
+                            }
+
+                            if (!config.Plugins.Any(p => p.Path == pluginName))
+                            {
+                                loadedPlugins.Add(new PluginConfigEntry
+                                {
+                                    Path = pluginName,
+                                    Enabled = true,
+                                    Version = version
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка загрузки плагина\n" + ex.Message);
+                }
+            }
+            // если были добавлены новые плагины — обновим конфиг
+            if (loadedPlugins.Any())
+            {
+                config.Plugins.AddRange(loadedPlugins);
+                SaveConfig(config);
+            }
         }
 
-        private void zoomInButton_Click(object sender, EventArgs e)
+        private void CreatePluginsMenu()
         {
-            var doc = ActiveMdiChild as DocumentForm;
-            doc?.ZoomIn();
-            doc.Invalidate();
+            // Сначала очистка, чтобы не дублировать
+            filtersToolStripMenuItem.DropDownItems.Clear();
+
+            // Добавляем плагин‑фильтры
+            foreach (var kvp in plugins)
+            {
+                var item = new ToolStripMenuItem(kvp.Value.Name);
+                item.Click += OnPluginClick;
+                filtersToolStripMenuItem.DropDownItems.Add(item);
+            }
+
+            filtersToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
+            var manageItem = new ToolStripMenuItem("Управление плагинами ...");
+            manageItem.Click += managePluginsToolStripMenuItem_Click;
+            filtersToolStripMenuItem.DropDownItems.Add(manageItem);
+        }
+
+        private async void OnPluginClick(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild == null)
+            {
+                MessageBox.Show("Нет открытого документа для применения фильтра.", "Внимание",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var item = (ToolStripMenuItem)sender;
+            if (!plugins.TryGetValue(item.Text, out IPlugin plugin))
+                return;
+
+            btnCancel.Visible = true;
+            progressBar1.Value = 0;
+            _cts = new CancellationTokenSource();
+            var progress = new Progress<int>(p =>
+            progressBar1.Value = Math.Max(progressBar1.Minimum, Math.Min(progressBar1.Maximum, p))
+            );
+
+            try
+            {
+                await plugin.Transform(((DocumentForm)ActiveMdiChild).Bmp, progress, _cts.Token);
+
+                // помечаем документ как изменённый
+                ((DocumentForm)ActiveMdiChild).Saved = false;
+
+                // обновляем временный слой сразу под новую картинку
+                ((DocumentForm)ActiveMdiChild).BmpTemp = (Bitmap)((DocumentForm)ActiveMdiChild).Bmp.Clone();
+
+                // обновляем
+                ActiveMdiChild.Invalidate(true);
+                ActiveMdiChild.Update();
+                ActiveMdiChild.Focus();
+            }
+            catch (OperationCanceledException)
+            {
+                MessageBox.Show("Операция отменена", "Плагин", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                btnCancel.Visible = false;
+                progressBar1.Value = 0;
+                _cts.Dispose();
+            }
+        }
+
+        private void managePluginsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dlg = new PluginManagerForm(config);
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                config.AutoMode = false;
+                SaveConfig(config);
+
+                // обновляем
+                FindPlugins();
+                CreatePluginsMenu();
+            }
+        }
+
+        private string configPath = "Plugins.config";
+
+        private PluginsConfiguration LoadConfig()
+        {
+            var config = new PluginsConfiguration();
+
+            if (!File.Exists(configPath))
+            {
+                config.AutoMode = true;
+                return config;
+            }
+
+            var doc = XDocument.Load(configPath);
+            var root = doc.Element("PluginsConfig");
+            config.AutoMode = (root.Attribute("mode")?.Value ?? "auto") == "auto";
+
+            foreach (var pluginNode in root.Elements("Plugin"))
+            {
+                config.Plugins.Add(new PluginConfigEntry
+                {
+                    Path = pluginNode.Attribute("path")?.Value,
+                    Enabled = bool.Parse(pluginNode.Attribute("enabled")?.Value ?? "false"),
+                    Version = pluginNode.Attribute("version")?.Value ?? "unknown"
+                });
+            }
+
+            return config;
+        }
+
+        private void SaveConfig(PluginsConfiguration config)
+        {
+            try
+            {
+                var doc = new XDocument(new XElement("PluginsConfig",
+                new XAttribute("mode", config.AutoMode ? "auto" : "manual"),
+                config.Plugins.Select(p =>
+                    new XElement("Plugin",
+                        new XAttribute("path", p.Path),
+                        new XAttribute("enabled", p.Enabled),
+                        new XAttribute("version", p.Version)
+                    ))
+            ));
+
+                doc.Save(configPath);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            _cts?.Cancel();
         }
     }
 }

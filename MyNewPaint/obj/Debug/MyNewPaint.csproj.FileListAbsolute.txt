@@ -26,3 +26,7 @@ C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\MyNewPai
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.exe
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.pdb
 C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.TextInputDialog.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.PluginManagerForm.resources
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\PluginInterface.dll
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\bin\Debug\PluginInterface.pdb
+C:\Users\antoxashowtvgames\source\repos\MyNewPaint\MyNewPaint\obj\Debug\MyNewPaint.csproj.Up2Date
